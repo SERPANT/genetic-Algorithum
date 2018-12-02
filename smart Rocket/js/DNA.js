@@ -3,7 +3,6 @@ class DNA {
     this.genes = [];
     this.fitness = 0.0;
     this.length = length;
-    this.initGene();
   }
 
   initGene() {
@@ -38,7 +37,7 @@ class DNA {
 
   mutate(mutationRate) {
     for (let i in this.genes) {
-      if (Math.random() < mutationRate) {
+      if (Math.random() <= mutationRate) {
         this.genes[i] = this.random2DVector();
       }
     }
